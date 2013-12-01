@@ -2,7 +2,7 @@
 
 A Haskell implementation using a list zipper of list zippers (or, a "plane zipper"), derived from Etienne Millon's brilliant blog post, [*Comonadic Life*] [1].
 
-When run, the program prints out the first 5 stages (one full rotation) of the famous glider pattern:
+When run, the program prints out the first 5 stages (one full cycle) of the famous glider pattern:
 
     $ cabal run
     

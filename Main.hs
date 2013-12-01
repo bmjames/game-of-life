@@ -47,8 +47,8 @@ neighbours = horiz ++ vert ++ liftA2 (.) horiz vert
         vert  = [up, down]
 
 aliveNeighbours :: PlaneZipper Bool -> Int
-aliveNeighbours z = card $ map (\dir -> extract $ dir z) neighbours
-  where card = length . filter id
+aliveNeighbours z = count (\dir -> extract $ dir z) neighbours
+  where count p = length . filter p
 
 rule :: PlaneZipper Bool -> Bool
 rule z = case aliveNeighbours z of
