@@ -23,10 +23,6 @@ right (PZ z) = PZ $ fmap Z.right z
 readCell :: PlaneZipper a -> a
 readCell (PZ z) = Z.cursor $ Z.cursor z
 
-writeCell :: a -> PlaneZipper a -> PlaneZipper a
-writeCell a (PZ z) = PZ $ modify (Z.replace a) z
-  where modify f z' = Z.replace (f $ Z.cursor z') z'
-
 move :: (a -> a) -> (a -> a) -> a -> Z.Zipper a
 move f g z = Z.Zip (iterate1 f z) (iterate g z)
   where iterate1 f' = tail . iterate f'
